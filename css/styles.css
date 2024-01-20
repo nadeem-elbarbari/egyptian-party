@@ -1,0 +1,406 @@
+/* ? ==> global */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+@font-face {
+	font-family: 'header';
+	src: url(../fonts/heading.ttf);
+}
+
+:root {
+	/* * ==> colors */
+	--primary-color: #d62f32;
+	--secondary-color: #111111;
+	--bg-color: #cdcccd;
+	--accent-color: #e68285;
+
+	/* * ==> fonts */
+	--header-font: 'header';
+	--body-font: 'Poppins', sans-serif;
+}
+
+::selection {
+	color: lightyellow;
+	background: var(--accent-color);
+}
+
+body {
+	font-family: var(--body-font);
+}
+/* ? ==> navbar */
+nav {
+	background: var(--secondary-color);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	padding: 60px 0;
+	z-index: 99;
+}
+
+nav li {
+	list-style: none;
+	padding: 10px 0;
+	margin: 0 50px;
+	font: 1.5rem var(--body-font);
+	transition: all 0.5s;
+}
+
+nav a {
+	text-decoration: none;
+	transition: all 0.5s;
+	color: #fff;
+}
+
+nav a:hover {
+	color: var(--accent-color);
+	cursor: pointer;
+}
+
+#close.bx {
+	transition: all 0.5s;
+	color: #fff;
+	padding: 0px 5px;
+}
+
+#close.bx:hover {
+	color: var(--accent-color);
+	cursor: pointer;
+}
+
+#open {
+	cursor: pointer;
+}
+
+#open .open {
+	transition: all 0.5s;
+	right: -50px;
+	top: 0px;
+}
+
+#open .open:hover {
+	color: var(--accent-color);
+}
+
+/* ? ==> hero */
+
+.hero {
+	background: linear-gradient(rgba(214, 47, 50, 0.7), rgba(129, 29, 31, 0.7)),
+		url(../images/hero.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100svh;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	/* display: none; */
+}
+
+.hero h1 {
+	color: #fff;
+	font: 8rem var(--header-font);
+}
+
+.hero p {
+	color: #fff;
+	font: 1.5rem var(--body-font);
+}
+
+.scroll-down {
+	position: absolute;
+	bottom: 50px;
+	width: 2.7rem;
+	height: 4.7rem;
+	border: 2px solid #fff;
+	border-radius: 100vh;
+}
+
+.scroll-down::before {
+	content: '';
+	width: 0.5em;
+	height: 0.5em;
+	border-radius: 100vh;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: scroll 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll {
+	0% {
+		bottom: 70%;
+		opacity: 1;
+	}
+
+	100% {
+		bottom: 20%;
+		opacity: 0;
+	}
+}
+
+/* ? ==> accordion */
+
+.container {
+	padding: 50px 0;
+}
+
+.accordion {
+	width: 70%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: all 0.5s;
+}
+
+.accordion-header {
+	background: var(--accent-color);
+	display: flex;
+	width: 100%;
+	margin-top: 5px;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+.accordion-header h3 {
+	font: 1.5rem var(--body-font);
+	text-align: center;
+	padding: 5px;
+	margin: auto;
+	font-weight: 600;
+	font-size: 2rem;
+	color: #fff;
+}
+
+.accordion-header i {
+	position: absolute;
+	right: 0;
+	font-size: 1.5rem;
+	padding: 5px;
+	color: #fff;
+	transition: all 0.5s;
+}
+
+.accordion-content {
+	background: var(--bg-color);
+	padding: 10px;
+	display: none;
+}
+
+.accordion-content p {
+	font: 1.2rem var(--body-font);
+	text-align: center;
+}
+
+/* ? ==> counter */
+
+.counter {
+	background: linear-gradient(rgba(214, 47, 50, 0.7), rgba(129, 29, 31, 0.7)),
+		url(../images/join.jpg) no-repeat center;
+	background-size: cover;
+	height: 300px;
+}
+
+.counter .countdown {
+	/* background-color: green; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	/* padding: 50px 0; */
+}
+
+.counter .countdown .box {
+	/* background-color: yellow; */
+	width: 300px;
+	height: 150px;
+	border: 5px solid #fff;
+	margin: 0 30px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	color: #fff;
+}
+
+/* ? ==> join us */
+
+.join-us {
+	text-align: center;
+	width: 70%;
+	margin: auto;
+	padding: 50px 0;
+}
+
+.join-us .join-header {
+	margin-bottom: 50px;
+
+}
+
+.join-us h2 {
+	font: 3rem var(--header-font);
+	position: relative;
+	margin: auto;
+	width: fit-content;
+}
+
+.join-us h2::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 40px;
+	transform: translateX(-50%);
+	display: block;
+	width: 100%;
+	height: 7px;
+	z-index: -1;
+	background-color: var(--accent-color);
+}
+
+.join-us > p {
+	font: 1.2rem var(--body-font);
+}
+
+.join-us .join-details {
+	text-align: left;
+}
+
+.join-us .join-details h3 {
+	font: 1.5rem var(--body-font);
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.join-us .join-details p {
+	font: 1.2rem var(--body-font);
+	margin-bottom: 30px;
+}
+
+.join-us .join-details li {
+	list-style: none;
+	font: 1.2rem var(--body-font);
+	margin: 30px -35px;
+}
+
+.join-us .join-details li i {
+	font-size: 1.5rem;
+	color: var(--accent-color);
+}
+
+.join-us .join-details li span {
+	margin-left: 10px;
+}
+
+.join-us .join-details li span.email {
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+.join-us .join-details li span.email:hover {
+	color: var(--primary-color);
+}
+
+.join-us .join-details .socials {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	font-size: 2rem;
+	width: 100px;
+	height: 100px;
+	margin: 30px 0;
+}
+
+.join-us .join-details .socials i {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid var(--secondary-color);
+	border-radius: 100vh;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.join-us .join-details .socials i:hover {
+	background-color: var(--accent-color);
+}
+
+.join-us .join-contact {
+	display: flex;
+	flex-direction: column;
+}
+
+.join-us .join-contact input,
+.join-us .join-contact textarea {
+	margin: 10px;
+	padding: 10px;
+}
+
+.join-us .join-contact textarea {
+	resize: none;
+	height: 200px;
+}
+
+.join-us .join-contact input:focus,
+.join-us .join-contact textarea:focus {
+	outline-color: var(--accent-color);
+}
+
+.join-us .join-contact button {
+	padding: 10px;
+	width: 200px;
+	border: none;
+	border-radius: 100vh;
+	background-color: var(--accent-color);
+	color: #fff;
+	font: 1.2rem var(--body-font);
+	transition: all 0.5s;
+}
+
+.join-us .join-contact button:hover {
+	background-color: var(--primary-color);
+}
+
+/* ? ==> footer */
+
+footer {
+	text-align: center;
+	padding: 50px 0;
+}
+
+footer p {
+	font: 1.2rem var(--body-font);
+}
+
+footer p a {
+	text-decoration: none;
+	color: var(--accent-color);
+	transition: all 0.5s;
+}
+
+footer p a:hover {
+	color: var(--primary-color);
+}
+
+footer p i {
+	color: var(--primary-color);
+	animation: beat 1s infinite;
+}
+
+@keyframes beat {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
